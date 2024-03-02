@@ -17,7 +17,6 @@ async function getData(slug: string) {
 
 async function BlogArticle({ params }: { params: { slug: string } }) {
   const data: fullBlog = await getData(params.slug);
-  console.log(data);
   return (
     <div className="mt-8 ">
       <h1>
@@ -36,7 +35,7 @@ async function BlogArticle({ params }: { params: { slug: string } }) {
         priority
         className="rounded-lg mt-8 border"
       />
-      <div className="mt-16 prose prose-blue prose-xl prose-invert ">
+      <div className="mt-16 prose prose-blue prose-lg dark:prose-invert ">
         <PortableText value={data.content} />
       </div>
     </div>
